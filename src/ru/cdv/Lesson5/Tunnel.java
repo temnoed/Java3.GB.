@@ -1,7 +1,7 @@
 package ru.cdv.Lesson5;
 
 public class Tunnel extends Stage {
-    public Tunnel() {
+    Tunnel() {
         this.length = 80;
         this.description = "Тоннель " + length + " метров";
     }

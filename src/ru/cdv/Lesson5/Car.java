@@ -1,5 +1,7 @@
 package ru.cdv.Lesson5;
 
+import static ru.cdv.Lesson5.Main.readyStart;
+
 public class Car implements Runnable {
     private static int CARS_COUNT;
 
@@ -11,15 +13,15 @@ public class Car implements Runnable {
     private int speed;
     private String name;
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public int getSpeed() {
+    int getSpeed() {
         return speed;
     }
 
-    public Car(Race race, int speed) {
+    Car(Race race, int speed) {
         this.race = race;
         this.speed = speed;
         CARS_COUNT++;
@@ -32,9 +34,12 @@ public class Car implements Runnable {
             System.out.println(this.name + " готовится");
             Thread.sleep(500 + (int) (Math.random() * 800));
             System.out.println(this.name + " готов");
-        } catch (Exception e) {
+            readyStart.countDown();
+            readyStart.await();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         for (int i = 0; i < race.getStages().size(); i++) {
             race.getStages().get(i).go(this);
         }

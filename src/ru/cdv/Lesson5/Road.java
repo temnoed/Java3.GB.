@@ -1,7 +1,7 @@
 package ru.cdv.Lesson5;
 
 public class Road extends Stage {
-    public Road(int length) {
+    Road(int length) {
         this.length = length;
         this.description = "Дорога " + length + " метров";
     }
