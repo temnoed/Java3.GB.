@@ -1,8 +1,8 @@
 package ru.cdv.Lesson5;
 
 public abstract class Stage {
-     int length;
-     String description;
+    int length;
+    String description;
 
     public String getDescription() {
         return description;

@@ -1,6 +1,6 @@
 package ru.cdv.Lesson5;
 
-import static ru.cdv.Lesson5.Main.readyStart;
+import static ru.cdv.Lesson5.MainRace.*;
 
 public class Car implements Runnable {
     private static int CARS_COUNT;
@@ -8,7 +8,6 @@ public class Car implements Runnable {
     static {
         CARS_COUNT = 0;
     }
-
     private Race race;
     private int speed;
     private String name;
@@ -34,14 +33,20 @@ public class Car implements Runnable {
             System.out.println(this.name + " готовится");
             Thread.sleep(500 + (int) (Math.random() * 800));
             System.out.println(this.name + " готов");
-            readyStart.countDown();
-            readyStart.await();
-        } catch (InterruptedException e) {
+            cb.await(); // ready!
+            cb.await(); // start !
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
         for (int i = 0; i < race.getStages().size(); i++) {
             race.getStages().get(i).go(this);
         }
+        if (!isWinner) {
+            isWinner = true;
+            System.out.println(this.name + " - WINNER !");
+        }
+        finish.countDown();
     }
 }

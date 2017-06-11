@@ -1,13 +1,18 @@
 package ru.cdv.Lesson5;
 
+import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.Semaphore;
 
-public class Main {
+public class MainRace {
     private static final int CARS_COUNT = 4;
-    static final CountDownLatch readyStart = new CountDownLatch(CARS_COUNT + 1);
+    static final CountDownLatch finish = new CountDownLatch(CARS_COUNT);
+    static final Semaphore semaphore = new Semaphore(CARS_COUNT / 2);
+    static final CyclicBarrier cb = new CyclicBarrier(5);
+    static volatile boolean isWinner = false;
 
-
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws BrokenBarrierException, InterruptedException {
         System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Подготовка!!!");
         Race race = new Race(new Road(60), new Tunnel(), new Road(40));
         Car[] cars = new Car[CARS_COUNT];
@@ -19,12 +24,11 @@ public class Main {
         for (Car aCar : cars) {
             new Thread(aCar).start();
         }
-
-        while (readyStart.getCount() > 1) //Проверяем, собрались ли все автомобили
-            Thread.sleep(100);
-
-        readyStart.countDown();
+        cb.await(); // ready ?
         System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка началась!!!");
+        cb.await(); // start !
+
+        finish.await();
         System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка закончилась!!!");
     }
 }
