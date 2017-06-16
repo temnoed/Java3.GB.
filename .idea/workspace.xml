@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7b6a9b9-8c51-4d1a-8214-e59af7319170" name="Default" comment="lesson6. DZ.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/cdv/Lesson6/CalcTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/cdv/Lesson6/Calculator.java" />
+    <list default="true" id="e7b6a9b9-8c51-4d1a-8214-e59af7319170" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/J3GB.iml" afterPath="$PROJECT_DIR$/J3GB.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/cdv/Lesson6/MainDz6.java" afterPath="$PROJECT_DIR$/src/ru/cdv/Lesson6/MainDz6.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -552,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496696651625</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="lesson6. DZ. task1. Тесты.">
+      <created>1497639427978</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1497639427978</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -653,7 +655,8 @@
     <MESSAGE value="GB. Java 3. Lesson 4. Многопоточность. ДЗ." />
     <MESSAGE value="GB. Java 3. Lesson 5. Гонки." />
     <MESSAGE value="lesson6. DZ." />
-    <option name="LAST_COMMIT_MESSAGE" value="lesson6. DZ." />
+    <MESSAGE value="lesson6. DZ. task1. Тесты." />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson6. DZ. task1. Тесты." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
