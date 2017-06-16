@@ -11,5 +11,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sqlite-jdbc-3.16.11" level="project" />
+    <orderEntry type="library" name="junit-4.12" level="project" />
   </component>
 </module>
